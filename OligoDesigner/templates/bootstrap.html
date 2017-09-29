@@ -1,0 +1,112 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>ProbeDesigner软件介绍说明</title>
+<div class="row">
+        <div class="col-md-4" >
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>ProbeDesigner</em>简介</b>
+    </div>
+    <div class="panel-body">
+        <p>随着分子生物、生物信息学的发展，越来越迫切需要一种新的平台来完成一站式的分析、检索、设计、合成需求的平台</p>
+        <p>ProbeDesigner正是基于这种背景下诞生，不需要太深厚的专业背景知识，你就可以完成非常专业的引物和探针设计工作</p>
+        <p>目前软件更新版本为V1.0，后续将会推出更多功能</P>
+        <p>作者联系方式：lxk#yhkodia.com</p>
+        <p><a HREF="http://kkds1314-img1.stor.sinaapp.com/ProbeDesignerV1%20Manual%20Book.pdf" title="下载">使用文档下载地址</a></p>
+        
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>ProbeDesigner</em>软件能完成的工作</b>
+    </div>
+    <div class="panel-body">
+        <p><b>ProbeDesigner</b>软件依赖于Python语言的强大生物信息库BioPython可以轻松实现常规的序列读入、写出、Blast比对，同源性分析、以及与Entrez数据库的交互沟通，
+        SwissPort处理、Medline数据库、图形模型、遗传分析、蛋白质序列预测等功能.</br></p>
+        <p><b>QuantiMAT</b>技术是一种基于分支链信号扩增技术开发的国产化第二代信号放大技术，<b>ProbeDesigner</b>可以根据所选靶标的序列信息，生成各种QuantiMAT实验所需
+        的各种功能性探针组CE（capture probes）、LE（Label Extender）、BL（Blocker）。这些探针组通过了严苛的NSH（非特异性杂交分析），使得探针和通用2.0序列产生最小的NSH
+        确保实验的高特异性、高灵敏度。</p>
+    </div>
+</div>
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <b><em>filter</em>说明</b>
+    </div>
+    <div class="panel-body">
+        <p><b>过滤</b>是改变探针允许服务类型的有力工具。使用过滤器的准则，你可以增加或减少探针可用于检测CES或LES的数量。 </p>
+        <p>应该指出的是，改变过滤准则的主要原因是增加CES和LES，可用于检测的数量。虽然默认的阈值是优秀的指导方针，他们是。在许多情况下，你可能有探头略高于或低于允许的阈值。</p>
+        <p>你，作为引物组设计师（我打赌你从来没有叫过），将需要审查中每个探针组中的探针来确定，如果任何的特性，可以轻松但不影响检测性能。</p>
+        <p>请记住，“过滤”的动作（即，放宽过滤器标准）放宽过滤器的所有在树上探针。不能为单个探针放松过滤器。当您为一个探头放松过滤器时，您可以以有利的方式改变其他探针的状态。</p>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <b><em>CE-LE 交叉反应</em>说明</b>
+    </div>
+    <div class="panel-body">
+        <p><b>CE-LE 交叉反应</b> 被ProbeDesigner软件认为是最终的背景来源，事实上，这些相互作用被用来建立在分析中的探针的最终分配。互补的CES和LEs可能通过以下机制互动。这可以通过排除在探针组之一或两个探针分配相同的服务从服务探讨预防。将探针的方法，计算ce-le相互作用，和重新分配是必要的，你可以想象，一个迭代的过程。使用赋值视图启用此过程。</p>
+        <p>类似于CE和Le，NSH计算的ce-le交互使用X-聚体算法评价。PD搜索所有可能的延伸引物形式可能x-聚体（CEs vs. LEs），估计他们的稳定性，和他们。同样的组合计算，它将一个重的富X-聚体结果估计的ce-le交叉对背景的影响。所有的ce-le相互作用给出一个权重6类似le-amp交叉反应对于system 1检测。</p>
+   <p><img class="img" width="300px;" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjQyNTk3MjY3MDFfNg.png" /></p>
+    </div>
+</div>
+        </div>
+        <div class="col-md-8" >
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>NSH </em>算法</b>
+    </div>
+    <div class="panel-body">
+        <p>ProbeDesigner软件的核心就是x聚体算法。该算法用于评估和任何通用序列之间的杂交稳定性 </p>
+        <p>“x聚体”指的是由算法考虑决定的最小的完美杂交的长度。虽然该程序的默认值是一个4聚体，你可以调整这个参数。
+        当算法：该x-mer算法开始识别在所选的探针和通用序列之间所有可能产生的x-mer，一个简单的加权方案是用来预测每一个完美的
+        x-mer混合的稳定性，并为所有的杂交结果总结每个探针与通用序列的交叉反应因子。下面的例子 ：</p>
+    <p>1. 所有的可能的4聚体定义如下:</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAxNTY2MTgyNTZfMj.png" /></p>
+    <p>这里有两个4聚体: TTTC-GAAA and TTCG-CGAA</p>
+    <p>2. 任何一个x聚体 (以一个典型的4聚体为例) 被计算分值通过一个简单的加权方案。</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
+    <p>并且 3.所有的4聚体计算分值真多通用探针序列和设计探针交叉反应因子值</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
+    <P>一旦x聚体算法产生所有可能的通用序列的相互交叉反应的结果，NSH算法调用。</p>
+    <p>1。每个x聚体得分乘以相应的权重因子（1X CE与AP，6X CE放大器的前导，15倍的CE与放大臂）确定探针的NSH评分。有一个结果为每个探针与通用序列的交叉反应。
+    这个过程是执行一次假设探针是一个CE，一旦假设它是一个LE。在这个例子中，假设我们正在寻找一个ce-amp与所设计探针的交叉反应</p>
+    <p align="center"><b>NSH 得分 = x-聚体得分 * 权重因子 = 1.375 * 6 =8.25</b></p>
+    <p>2. x聚体的分数计算与其他探针NSH相互作用（这意味着x聚体算法也重新的计算探针间的交叉反应）。</p>
+     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjE5MzA3ODIxNjFfNQ.png" /></p>
+    </div>
+</div>
+ 
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <b><em>NSH</em>的定义</b>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <p><b>NSH反应作用涉及捕获引物组和标记延伸引物组的交互以及通用序列在bDNA检测中导致高检测背景。</b>. 最小化NSH反应是一个成功的引物组设计必不可少的一部分。因此, 
+        Probedesigner能够筛选出引物探针以排除那些可能通过NSH反应导致背景的升高。 (引用一个关于NSH反应的文献, see M. Collins et. al., NAR Vol 25, no. 15, Aug 1997). </p>
+        <p>在开始之前，一件重要的事情是我们如何定义“通用”序列。这些分子，在所有BDNA检测系统中是通用的（即相同的通用化学类型），调解目标的捕获和信号放大。
+                                对于SYSTEM 1检测系统 (开放试剂盒), 他们包括了分支链DNA分子, AP探针 和在包被板上的捕获探针 (PSCP)。 对于SYSTEM 8检测系统, 他们包括了分支链DNA分子 (附带iso-C, iso-G), 前放大体分子和在板上的捕获探针， CE
+        CE和LE引物组的尾巴 (也被成为延伸) 也被认为是通用的，通过间隔与特定的扩展序列拼接后，他们共同协同似使得探针杂交到通用序列上以及随后的信号放大成为可能。对于任何一个化学系统而言，这些通用序列组合在一起形成一个文件导入到ProbeDesigner软件中成为一个组 </p>
+        <ul>
+                              从一个探针组中筛选探针可能会导致高背景的涉及以下几个方面内容：
+        <li>识别能够导致非特异性杂交的通用延伸的反应 ；</li>
+        <li>评估形成于通用序列和延伸序列之间的杂交稳定性；</li>
+        <li>评估任何潜在的稳定交叉反应对背景的影响。</li>
+        </ul>
+        <p>对于NSH交叉反应System 1化学系统是这么描述的。 交叉反应的不同，取决于引物是作为CE引物还是LE引物。早期的设计过程中，我们没有指定引物的服务类型，任何引物都可以是CE引物或LE引物。 因此, 对于所有的引物组都是进行两次的分析，一种假设作为CE引物服务，一种假设作为LE引物服务。</p>
+        <p>Probedesigner估计杂交稳定性及其背景影响。每一个相互作用的混合稳定性使用X-聚体算法评估（下面讨论），和混合背景的贡献乘以这个预测的加权因子的具体作用的稳定性计算。每个交互相关的系统1的共性评分如下。虽然建议使用默认设置，混合参数和NSH加权因素可以改变程序内使用NSH对话框。</p>    
+
+<p>作为一个例子，注意ce-amp臂相互作用重15倍。如果混合的稳定性从X-聚体造方法是计算，说，“1”，这种相互作用的CE NSH的成绩是15分（的富润机械制造结果的15倍）。现在，如果你正在关注，你想知道为什么CE -“放大器- ARM”的互动给予更多的重量比行政长官“AMP领导人”和行政长官-“AP探针”的互动。为15x3分子，每个AMP武器有AP探针三结合位点。这将产生45个结合位点的AP和CE探针应该有非特异性配对。从概念上讲你可以想象为什么这是一个互动，我们希望避免NSH。 </p>
+<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUwNTgxOTk2OTFfMj.png" /></p>
+<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUyMzMwMzU1NTNfMj.png" /></p>
+<p align="center"><b>对于System 1 化学体系的NSH交叉反应</b></p>
+    </div>
+    
+</div>
+
+        </div>
+    </div>
+
+<!-- /#mainWrap -->
+ {% endblock %}

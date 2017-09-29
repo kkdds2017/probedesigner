@@ -1,0 +1,23 @@
+{% extends "base.html" %}     
+{% block content %} 
+<title>Show the probe list</title>
+<body>
+
+<p>提交序列详细：{{ oligoseq }}</p>
+<p>序列长度：{{ seqlen }}</p>
+<p>A碱基数量：{{ acount }}</p>
+<p>C碱基数量：{{ ccount }}</p>
+<p>G碱基数量：{{ gcount }}</p>
+<p>T碱基数量：{{ tcount }}</p>
+<p>GC含量	：{{ GC }}%</p>
+<p>相对分子质量：{{ MW }} (Dalton)</p>
+<p>Tm值：{{ Tm }} ℃</p>
+<p>1个OD<sup>260</sup>值≈{{ OD }} nmoles(消光系数)</p>
+<p>反向互补序列：{{ reverse }} </p>
+
+<p>编号 ------------------------探针编号-----------------序列信息（5‘-3’）--------------------</p>
+{% for key,value in pl.items %}
+<p>序列清单：{{ forloop.counter }} -------------{{ key }}-------------{{ value }}</p>
+{% endfor %}
+</body>
+{% endblock %} 

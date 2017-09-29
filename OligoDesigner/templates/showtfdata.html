@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>NGS-转录本数据TF处理结果</title>
+ <div>
+  <form class="form-horizontal">
+    <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">输出结果</label>
+          <div class="controls">
+            <div class="textarea">
+                  <textarea type="" class="form-control" rows="8">{% for c in cdata %} {{ c }}{% endfor %}</textarea>
+            </div>
+          </div>
+        </div>
+  </form>
+  
+  </div>
+ <!-- /#mainWrap -->
+ {% endblock %}

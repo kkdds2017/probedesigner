@@ -1,0 +1,14 @@
+﻿﻿<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<table cellpadding=20 cellspacing=0 border=0><tr><td style="border:0pt"><html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><title>7-生成加尾引物序列</title><link href="pgstyles.css" type="text/css" rel="stylesheet"/><script language=JavaScript type="text/javascript" src="spage.js"></script><META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"><META HTTP-EQUIV="Pragma" CONTENT="no-cache"><meta http-equiv="expires" content="FRI, 13 APR 1999 01:00:00 GMT"><META name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE"><!--[if !mso]><style>v\:* {behavior:url(#default#VML);} o\:* {behavior:url(#default#VML);} w\:* {behavior:url(#default#VML);} .shape {behavior:url(#default#VML);}</style><![endif]--></head><body onload="HighlightSearchText();" leftmargin=2 rightmargin=2 topmargin=2 bottommargin=2><p><font class="navigationcss" face="arial" size="1" color="#cbc9ba"><a href="Welcome.htm?pageid=Welcome">首页</a>&nbsp;&gt;&nbsp;<a href="4.htm?pageid=4">功能介绍</a>&nbsp;&gt;&nbsp;<a href="15.htm?pageid=15">7-生成加尾引物序列</a></font></p>
+<p><font class="pagetitle" face="arial" size="4">7-生成加尾引物序列</font></p>
+<p><font size="4">帮助页面一般包括几个方面的内容<br>
+1.功能介绍：描述如功能的使用对象，用途等，让使用者通过介绍对功能能有初步的认识。<br><img src="images/711.jpg" class="img-responsive img-thumbnail"><br>
+2.操作步骤：点击“导出探针序列”，如下图生成一个“download.xls”文件。<br><img src="images/888.png" class="img-responsive img-thumbnail"><br>
+3.注意事项：将文件上传到引物合成公司即可以合成所需要的引物了。</font></p>
+<p><font class="subheading" face="arial" size="3" color="#cbc9ba">参阅</font></p>
+<div class="pagelist"><a href="5.htm?pageid=5">1-本地文件解析功能</a><br><a href="9.htm?pageid=9">2-选择引物设计区域</a><br><a href="10.htm?pageid=10">3-提交设计区域</a><br><a href="11.htm?pageid=11">4-可用引物列表</a><br><a href="12.htm?pageid=12">5-引物Filtering功能</a><br><a href="13.htm?pageid=13">6-选定的CE与LE的Xmer</a><br><a href="15.htm?pageid=15">7-生成加尾引物序列</a><br></div></body></html></td></tr></table>

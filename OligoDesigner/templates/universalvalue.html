@@ -1,0 +1,97 @@
+{% extends "en_base.html" %} 
+ {% block content %}
+ <title>Calculate the NSH value results with the universal sequence (CE-tail/LE-tail)</title>
+<script>
+ function checkForm()  
+{  
+       var t1 = document.getElementById("Plist").getElementsByTagName("input");  
+       for(i=0;i<t1.length;i++)  
+       {  
+           if(t1[i].type == "checkbox")  
+           {  
+               if(!(t1[i].checked))  
+               {  
+                   t1[i].checked = true;  
+                   t1[i].value = "0";  
+               }  
+           }  
+       }  
+       return true;  
+}  
+</script>
+<style></style>
+<div class="panel panel-info">
+<div class="panel-heading">
+        <b>Choose a suitable function region according to the calculate value</b>
+</div>
+<div class="container" style="padding:20px;height:auto;" >
+<form action="http://{{local}}/Probegroupsvalues/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
+
+<table class="table table-condensed"  style="padding:20px;height:auto;">
+  <caption><b>The calculated result of each primer and universal sequence（CE-tail&LE-tail）</b></caption>
+  <thead>
+    <tr>
+      <th>primer number</th>
+      <th>As CE service </th>
+      <th>As LE service </th>
+      <th>CE radio </th>
+      <th>LE radio</th>
+      <th>BL radio</th>
+      <th>GC content</th>
+      <th>Only choose one service</th></tr>
+  </thead>
+  <tbody>
+  {% for pxl in probe_xmer_list %}
+    <tr>
+      <td>
+      <label for="pkey" class="control-label">{{pxl.0}}</label>
+      <input type="hidden" style="width:25%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/>
+      </td>
+      {% if pxl.1.0.0 > 26 or pxl.1.3 > 70 %}
+      <td><font color="red"><b>{{pxl.1.0.0}}</b></font></td>
+      {% else %}
+      <td>{{pxl.1.0.0}}</td>
+      {% endif %}
+       {% if pxl.1.0.1 > 16 or pxl.1.3 > 70 %}
+      <td><font color="red"><b>{{pxl.1.0.1}}</b></font></td>
+      {% else %}
+      <td>{{pxl.1.0.1}}</td>
+      {% endif %}
+      {% if pxl.1.0.0 > 26 or pxl.1.3 > 70 %}
+      <td><label class="checkbox-inline"><input type="hidden" onclick="return false" name="CEcheck" value="NCE"></label></td>
+      {% else %}
+      <td>
+      <label class="checkbox-inline"><input type="checkbox" checked id="CEcheck" name="CEcheck" value="CE">CE</label>
+      
+      </td>
+     {% endif %}
+     {% if pxl.1.0.1 > 16 or pxl.1.3 > 70 %}
+      <td><label class="checkbox-inline"><input type="hidden" onclick="return false" name="LEcheck" value="NLE"></label></td>
+      {% else %}
+      <td>
+      <label class="checkbox-inline"><input type="checkbox" checked id="LEcheck" name="LEcheck" value="LE">LE</label>
+      
+      </td>
+      {% endif %}  
+      <td>
+      <label class="checkbox-inline"><input type="checkbox" checked id="BLcheck" name="BLcheck" value="BL">BL</label>
+      
+      </td>
+      {% if pxl.1.3 > 70 %}
+      <td><font color="red"><b>{{pxl.1.3}}%</b></font></td>
+      {% else %}
+      <td>{{pxl.1.3}}%</td>
+      {% endif %}
+      <td><input type="hidden" style="width:0" class="form control" name="pseq" value="{{pxl.1.2}}" readonly="readonly"/></td>
+    <tr>
+   {%endfor%}
+  </tbody>
+</table>
+ <div class="panel panel-active" style="margin:20px;">
+ <button type="submit" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>Calculate the x-mer values between the selected groups of probes</button>
+ </div>
+ </div>
+ </form>
+ </div>
+  <!-- /#mainWrap -->
+{% endblock %}

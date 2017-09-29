@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>CE和LE探针的NSH结果</title>
+ <script src="../static/js/jquery.base64.js"></script>
+ <script src="../static/js/tableExport.js"></script>
+<div class="panel panel-info" >
+<div class="panel-heading">
+        <b>生产QuantiMAT 2.0 探针引物序列（另存为xls格式文件）</b>
+</div>
+<div class="container" style="padding:20px;height:auto;"> 
+<table id="tb_pl_m" class="table table-bordered">
+<thead>
+<tr>
+<th>Probe Number</th>
+<th>Sequence</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+{% for cfl in CE_final_list %}
+<tr>
+<td>{{ cfl.0 }}</td>
+<td>{{ cfl.1 }}</td>
+<td>CE</td>
+</tr>
+{%endfor%}
+{% for lffl in LE_final_final_list %}
+<tr>
+<td>{{ lffl.0 }}</td>
+<td>{{ lffl.1 }}</td>
+<td>LE</td>
+</tr>
+{%endfor%}
+{% for bfl in BL_final_list %}
+<tr>
+<td>{{ bfl.0 }}</td>
+<td>{{ bfl.1 }}</td>
+<td>BL</td>
+</tr>
+{%endfor%}
+</tbody>
+<tfoot>
+<tr>
+<td>-无-</td><td>-无-</td><td>-无-</td>
+</tr>
+</tfoot>
+</table>
+<div style="text-align:center;">
+<button type="submit" onclick="$('#tb_pl_m').tableExport({ type: 'excel', separator: ';', escape: 'false' });"  class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-file"></span>导出探针序列</button>
+</div>
+</div>
+</div>
+<!-- /#mainWrap -->
+{% endblock %}

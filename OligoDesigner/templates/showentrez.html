@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>显示genbank文件</title>
+
+<div style="margin-top:20px;">
+<table class="table"  style="word-break:break-all; word-wrap:break-all;"> 
+  <caption><h3><b>显示genbank文件</b></h3></caption>
+  <thead>
+    <tr>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center">数据</th>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center">数据</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <td width="15%">definition：</td>
+      <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{definition}}</td>
+      <td width="15%">accession_version：</td>
+      <td width="35%">{{accession_version}}</td></tr>
+    <tr class="success">
+      <td>taxonomy：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{taxonomy}}</td>
+      <td>organism：</td>
+      <td>{{organism}}</td></tr>
+    <tr class="warning">
+      <td>locus：</td>
+      <td>{{locus}}</td>
+      <td>source：</td>
+      <td>{{source}}</td></tr>
+    <tr class="danger">
+      <td>seqlength：</td>
+      <td>{{seqlen}}</td>
+      <td>create-date：</td>
+      <td>{{cdate}}</td></tr>
+    <tr class="active">
+      <td>topology：</td>
+      <td>{{topology}}</td>
+      <td>division：</td>
+      <td>{{division}}</td></tr>
+    <tr class="warning">
+      <td>update_date：</td>
+      <td>{{update_date}}</td>
+      <td>strandedness：</td>
+      <td>{{strandedness}}</td></tr>
+    <tr class="success" >
+      <td colspan="4"><u><i><a title="蛋白质序列">{{protein_seq}}</a></i></u> </td></tr>
+    <tr class="danger" >
+      <td colspan="4"><u><i><a href="http://{{local}}/startdesign/" title="序列信息（5‘-3’）">{{oligoseq}}</a></i></u> </td></tr>
+  </tbody>
+</table>
+
+</div>
+<!-- /#mainWrap -->
+ {% endblock %}

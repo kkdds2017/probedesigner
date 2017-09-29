@@ -1,0 +1,32 @@
+﻿<HTML><HEAD>
+<title>Index - ZZASY0302/9527</title>
+<link href="pgstyles.css" type="text/css" rel="StyleSheet"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script>
+    function $$(id)
+    {return document.getElementById(id);} 
+   function gotoKey(keyword) {
+        if ('' == keyword) return;
+        var options = $$('slIndexList').options;
+        for (var i = 0; i < options.length; i++) {
+            var title = options[i].text.toLowerCase();
+            if (title.indexOf(keyword) == 0) {
+                options[i].selected = true;
+                return;
+            }
+        }
+    }
+    function showKeyHref() {
+        if ($$('slIndexList').selectedIndex < 0) return;
+        var item = $$('slIndexList')[$$('slIndexList').selectedIndex];
+        window.open(item.value, "basefrm");
+    }
+    function winResized() {
+        var body = $$('slIndexList').parentNode;
+        $$('slIndexList').style.height = body.offsetHeight - 20;      
+    }
+    </script>
+</HEAD>
+<BODY topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0 onresize="winResized();" onload="winResized();" style="overflow:hidden">
+<span>关键词:<input id='txtSearchKey' onkeyup="return gotoKey(this.value);" value='' class="searcheditbox" name="txtSearchKey"></span><br/><br/><select id="slIndexList" onclick="showKeyHref()" size=4 border=0 cellspacing=0 cellpadding=0 style="width:100%;height:96%" class="keywordindex"><option value="Welcome.htm?pageid=Welcome">欢迎</a></option></select>
+</BODY></HTML>

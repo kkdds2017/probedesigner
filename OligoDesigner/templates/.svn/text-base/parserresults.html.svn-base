@@ -1,0 +1,51 @@
+{% extends "en_base.html" %} 
+ {% block content %}
+ <title>Parse a local file Page</title>
+<style>
+table{table-layout:fixed;}
+td{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
+</style>
+<div class="panel panel-info" style="margin-top:20px;height:auto;">
+<div class="panel-heading">
+        <b>Start the probe design job</b>
+</div>
+<table class="table" > 
+  <caption><h3><b>Parse a local file </b></h3></caption>
+  <thead>
+    <tr>
+      <th width="15%" text-align="center">Item</th>
+      <th width="35%" text-align="center">Data</th>
+      <th width="15%" text-align="center">Item</th>
+      <th width="35%" text-align="center">Data</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <td width="15%"><b>Description：</b></td>
+      <td width="35%">{{description}}</td>
+      <td width="15%"><b>GenBank&FASTA：</b></td>
+      <td width="35%">{{filetype}}</td></tr>
+      <tr class="warning">
+      <td width="15%"><b>Accessid：</b></td>
+      <td width="35%" >{{accessid}}</td>
+      <td width="15%"><b>Name：</b></td>
+      <td width="35%">{{name}}</td></tr>
+      <tr class="success">
+      <td width="15%"><b>Source：</b></td>
+      <td width="35%" >{{source}}</td>
+      <td width="15%"><b>Organism：</b></td>
+      <td width="35%">{{organism}}</td></tr>
+      <tr class="danger">
+      <td width="15%"><b>Taxonomy：</b></td>
+      <td width="35%" >{{taxonomy}}</td>
+      <td width="15%"><b>Topology：</b></td>
+      <td width="35%">{{topology}}</td></tr>
+      <tr class="active">
+      <td colspan="4"><u><i><a href="http://{{local}}/bingodesign/" title="Sequence Information（5‘-3’）">{{sequence}}</a></i></u> </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- /#mainWrap -->
+{% endblock %}

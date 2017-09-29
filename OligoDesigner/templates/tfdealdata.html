@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>NGS-转录本数据TF处理过程</title>
+ <div>
+ <form method="POST" action="http://{{ local }}/datatfshow/" role="form" class="form-horizontal" >{% csrf_token %}
+ <div class="form-group">
+    <label for="name">输入数据</label>
+    <textarea name="fdata" wrap="hard"  class="form-control" rows="8" style= "table-layout:fixed;word-break:break-all "></textarea>
+  </div>
+   <!-- Button -->
+          <div class="controls">
+            <button type="submit" class="btn btn-success">提交处理</button>
+          </div>
+ </form>
+  
+ </div>
+ <!-- /#mainWrap -->
+ {% endblock %}

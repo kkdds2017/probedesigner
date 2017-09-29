@@ -1,0 +1,291 @@
+﻿/* 页面一般元素样式*/
+BODY,TABLE,P,DIV,SPAN,INPUT,SELECT 
+{
+  FONT-SIZE: 14px; 
+  FONT-FAMILY:arial,sans-serif;
+}
+
+H4 
+{
+  FONT-SIZE: 12pt; 
+  FONT-FAMILY: arial,sans-serif;
+  COLOR: #000000;
+}
+li 
+{
+  margin-bottom:4px;
+}
+br{ 
+display:inline; line-height:7px;
+}
+#divwelcome
+{
+	float:right;
+}
+/* ----------------- 预定义的样式(可以改变内容) ------------------ */
+/*页面框架*/
+.pagecontent
+{
+  padding:14px;
+}
+/*按钮样式*/
+.btnstyle
+{
+	border: 1px solid #0b0b0b; 
+	margin: 3px; 
+	margin-left:6px;
+	WIDTH: 78px; 
+	FONT-FAMILY: arial,sans-serif;
+	HEIGHT: 22px; 
+	background-image: url(images/skins/btnbackground.gif);
+	background-color: Transparent; 
+	TEXT-ALIGN: center;
+	font-size:14px;
+	vertical-align:middle;
+	color: white;	
+	cursor:hand;
+}
+/*页面标题*/
+.pagetitle 
+{
+  FONT-WEIGHT: normal; 
+  FONT-SIZE: 25px; 
+  COLOR: #336666; 
+  FONT-FAMILY: arial,sans-serif;
+}
+/*小标题*/
+.subheading 
+{
+  FONT-WEIGHT: normal; 
+  FONT-SIZE: 16px; 
+  FONT-WEIGHT: bold; 
+  COLOR: #336666; 
+  FONT-FAMILY: arial,sans-serif;
+}
+/*参照链接列表*/
+.seealsolist A:link {text-decoration: none; color: #3399cc;}
+.seealsolist A:active {text-decoration: none; color: #3399cc;}
+.seealsolist A:visited {text-decoration: none; color: #3399cc;}
+.seealsolist A:hover {text-decoration: underline;}
+/*关键字索引列表*/
+.keywordindex {overflow:auto;}
+.keywordindex A{font-size:14px;}
+.keywordindex A:link {text-decoration: none; color: #434242;}
+.keywordindex A:active {text-decoration: none; color: #434242;}
+.keywordindex A:visited {text-decoration: none; color: #434242;}
+.keywordindex A:hover {background-color: yellow; color: black}
+/*页面顶部导航*/
+.navigationcss {FONT-SIZE: 12px; FONT-FAMILY: arial,sans-serif; COLOR:#999;}
+.navigationcss A:link {text-decoration: none; color: #999}
+.navigationcss A:active {text-decoration: none; color: #999}
+.navigationcss A:visited {text-decoration: none; color: #999}
+.navigationcss A:hover {text-decoration: underline; color: black}
+
+
+
+/*页面节点状态：待定*/
+.Pending
+{ 
+  font-family: arial,sans-serif;
+  font-size: 11px; 
+  padding-top:3px;
+  padding-bottom:2px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+  background-color: #fff6dc;
+}
+
+/* ----------------- TREE STYLES ------------------ */
+.HiddenRow 
+{ 
+  display:none;
+}
+
+
+.TreeView 
+{ 
+  padding-top:4px; 
+  padding-left:1px; 
+  cursor:default;
+
+
+}
+
+.TreeViewMargin
+{ 
+  padding-top:4px; 
+  padding-left:1px; 
+  cursor:default; 
+}
+
+.TreeNode 
+{ 
+  font-family: arial,sans-serif; 
+  font-size: 14px; 
+  padding-top:3px;
+  padding-bottom:2px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+}
+
+
+.GrayedTreeNode 
+{ 
+  font-family: arial,sans-serif;
+  font-size: 14px; 
+  padding-top:3px;
+  padding-bottom:2px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+  color:#AAA9A9; 
+  cursor:default;
+}
+
+.HoverTreeNode 
+{ 
+  font-family: arial,sans-serif;
+  font-size: 14px; 
+  text-decoration:underline; 
+  padding-top:3px;
+  padding-bottom:2px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+  cursor: default; 
+}
+
+.SelectedTreeNode 
+{ 
+  font-family: arial,sans-serif;
+  font-size: 14px; 
+  background-color: gray; 
+  color:white; 
+  padding-top:2px;
+  padding-bottom:1px;
+  padding-left: 2px; 
+  padding-right: 2px; 
+  cursor: default; 
+  border: 1px solid #3F3F3F;
+}
+
+.MultipleSelectedTreeNode
+{
+  font-family: arial,sans-serif; 
+  font-size: 14px; 
+  background-color: gray; 
+  color:white; 
+  padding-top:2px;
+  padding-bottom:1px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+  cursor: default; 
+}
+
+.CutTreeNode
+{
+  font-family: arial,sans-serif; 
+  font-size: 14px; 
+  background-color: silver; 
+  color:white; 
+  padding-top:2px;
+  padding-bottom:1px;
+  padding-left: 3px; 
+  padding-right: 3px; 
+  cursor: default; 
+}
+
+.NodeEdit 
+{
+  border:1px gray solid;
+  font-family: arial,sans-serif; 
+  font-size: 14px;
+}
+
+.Margin
+{
+  background-color: #E6E6F0;
+}
+
+.divtree TD {font-size: 11px; font-family: arial,sans-serif; text-decoration: none; white-space:nowrap;}
+.divtree A  {text-decoration: none; color: black;}
+
+  
+.skin0 {    
+    BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; VISIBILITY: hidden; BORDER-LEFT: black 1px solid; WIDTH: 152px; CURSOR: default; LINE-HEIGHT: 20px; PADDING-TOP: 4px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: arial,sans-serif; POSITION: absolute; BACKGROUND-COLOR: menu; TEXT-ALIGN:left;z-index:100;   
+}   
+.skin1 {   
+    BORDER-RIGHT: buttonhighlight 2px outset; BORDER-TOP: buttonhighlight 2px outset; FONT-SIZE: 10pt; VISIBILITY: hidden; BORDER-LEFT: buttonhighlight 2px outset; WIDTH: 100px; CURSOR: default; PADDING-TOP: 4px; BORDER-BOTTOM: buttonhighlight 2px outset; FONT-FAMILY: arial,sans-serif; POSITION: absolute; BACKGROUND-COLOR: menu; TEXT-ALIGN: left;z-index:100;    
+}   
+.menuitems {   
+    PADDING-RIGHT: 0px; PADDING-LEFT: 2px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px   
+}   
+.searcheditbox
+{
+	BORDER-RIGHT: #aab9ca 1px solid; 
+	BORDER-TOP: #aab9ca 1px solid; 
+	BORDER-LEFT: #aab9ca 1px solid; 
+	WIDTH: 65%; 
+	BORDER-BOTTOM: #aab9ca 1px solid; 
+	HEIGHT: 19px; 
+	BACKGROUND-COLOR: #f5f4ec;
+}
+#dvFormBG
+{
+	width:100%;
+	height:100%;
+	z-index:4;
+	position:absolute;
+	top:0px;
+	left:0px;	
+	background-color:Black;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+	filter:alpha(opacity=30);  /*IE5、IE5.5、IE6、IE7*/
+	opacity: .3;/*Opera9.0+、Firefox1.5+、Safari、Chrome*/
+	-moz-opacity:0.30;
+}
+.TogglePara_body{padding-left:20px; padding-top:4px; padding-right:4px; padding-bottom:4px; border-left:0px solid white; vertical-align:top;background-color:#fff6dc;}
+.TogglePara_up{
+	background-image:url(images/skins/blueup.gif);
+	background-repeat: no-repeat;
+	padding-left:10px;
+	background-attachment:fixed;
+	background-position: center left; 
+}
+.TogglePara_drop{
+	background-image:url(images/skins/bluedrop.gif);
+	background-repeat: no-repeat;
+	padding-left:10px;
+	background-attachment:fixed;
+	background-position: center left; 
+}
+.NavBar
+{	
+	overflow: hidden; 
+	/*cursor: col-resize;*/
+	width:1%;
+	height:100%;
+	padding:0 0 0 0;
+	text-align:center;	
+	border:0 0 0 0;	
+}
+.NP3
+{
+	background-image:url(images/skins/np3.jpg);
+	background-repeat: no-repeat;
+	border:0;		
+	width:9px;
+}
+.NP4
+{
+	background-image:url(images/skins/np4.jpg) ;
+	background-repeat: no-repeat;
+	border:0;	
+	width:9px;
+}
+#btnAddMark{font-size:12px}
+#btnDelMark{font-size:12px}
+input[type='text']{
+    background-color: #FFFFFF;
+    border: 1px solid #CECECE;
+    height: 22px;
+    line-height: 25px;
+}

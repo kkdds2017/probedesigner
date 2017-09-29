@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>关键字的大数据分析</title>
+
+<div class="table-responsive">
+  <table class="table">
+    <caption>关于PCR的生物信息学数据</caption>
+    <thead>
+      <tr>
+        <th>关键字</th>
+        <th>数据库</th>
+        <th>记录数</th></tr>
+    </thead>
+    <tbody>
+  {% for p in pcr %}  
+      <tr>
+        <td>"PCR"</td>
+        <td>{{p.1}}</td>
+        <td>{{p.0}}</td>
+      </tr>
+{%endfor%}     
+    </tbody>
+  </table>
+  <table class="table">
+    <caption>关于bDNA的生物信息学数据</caption>
+    <thead>
+      <tr>
+        <th>关键字</th>
+        <th>数据库</th>
+        <th>记录数</th></tr>
+        </thead>
+    <tbody>
+  {% for b in bDNA %}  
+      <tr>
+        <td>"bDNA"</td>
+        <td>{{b.1}}</td>
+        <td>{{b.0}}</td>
+         </tr>
+{%endfor%}     
+    </tbody>
+  </table>
+</div>
+<!-- /#mainWrap -->
+ {% endblock %}

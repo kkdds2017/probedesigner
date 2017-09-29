@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+<meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+		<script language="JavaScript" src="searchEngine.js"></script>
+		<script language="JavaScript" src="searchData.js"></script>
+        <script language=javascript>
+            function searchKeyPress(searchtext, e) {
+                var key;
+                if (window.event)
+                    key = window.event.keyCode;
+                else
+                    key = e.which;
+
+                if (key == 13) {
+                    if (typeof (doSearch) != 'undefined')
+                        doSearch(searchtext);
+                    else
+                        parent.doSearch(searchtext);
+                    return false;
+                }
+                else
+                    return true;
+            }
+            var content='';
+            function frmOnLoad() {
+                var StaticType = getURLvalue("type");
+                var searchTitle = getURLvalue("searchTitle");
+                var searchWords = getURLvalue("search");
+                if ("undefined" == searchWords
+                   && null != top.lastSearchContent) {
+                    document.getElementById('tdContainer').innerHTML = top.lastSearchContent;
+                    return;
+                }
+
+
+                if (null == parent.document.getElementById("txtSearchBox")) {
+                    content = "搜索:<table width=100% border=0 cellpadding=0 cellspacing=0><tr><td><input id=txtSearchBox style='WIDTH: 100%; HEIGHT: 22px' class=\"searcheditbox\" size=24 name=txtSearchBox onKeyPress=\"searchKeyPress(this.value,event);\" ></td><td width=22><img style='cursor:pointer' onclick=parent.doSearch(txtSearchBox.value) alt=Search src='images/skins/search.gif' align=absMiddle></td></tr></table><br><br>";
+                }
+                if ("undefined" != searchWords) {
+                    var searchBox;
+                    searchBox = document.getElementById('txtSearchBox');
+                    if (null == searchBox)
+                        searchBox = parent.document.getElementById('txtSearchBox');
+                    if (null != searchBox)
+                        searchBox.value = searchWords == "undefined" ? "" : searchWords;
+
+                    results = performSearch(searchWords, ('true' == searchTitle ? 1 : 3));
+                    var firstUrl = '';
+                    if (results && "[object Array]" == Object.prototype.toString.call(results)) {
+                        for (r = 0; r < results.length; r++) {
+                            result = arSeaKey[results[r]];
+                            if (StaticType == "noframes") {
+                                content+="<a href=\"" + result.url + "\">" + result.heading + "</a><br>";
+                            }
+                            else {
+                                content+="<a href=\"" + result.url + "?search=" + searchWords + "\" target='basefrm' onclick='SelectSearchRow(this)'>" + result.heading + "</a><br>";
+                            }
+                            if ('' == firstUrl)
+                                firstUrl = result.url + "?search=" + searchWords;
+                        }
+                        if ('' != firstUrl && StaticType != "noframes")
+                            window.open(firstUrl, 'basefrm');
+                    }
+
+                    else {
+                        content+="<i>" + results + "</i>";
+                        content+"<br>";
+                    }
+
+                }
+                document.getElementById('tdContainer').innerHTML = content;
+                top.lastSearchContent = content;
+            }
+           
+        </script>
+<title></title>
+<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+<link rel="stylesheet" type="text/css" href="pgstyles.css" />
+</head>
+<BODY onload="frmOnLoad()" leftmargin=0 rightmargin=0 bottommargin=0 topmargin=0 STYLE="background-color:transparent">
+	<table   cellSpacing=0 cellPadding=0 width=100% height=100% border="0"><tr>
+        <td id="tdContainer" class="keywordindex" valign="top">		
+
+	    </td></tr></table>
+
+ </BODY>
+
+</html>

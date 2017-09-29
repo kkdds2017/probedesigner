@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>从GenBank文件中解析</title>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+        <b>选取<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计</b>
+</div>
+    <div class="panel body" style="height:200px; padding-top:50px;">
+<form action="http://{{ local }}/xmltoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+<div class="col-sm-10">
+<input class="form-control" type="file" name="file" accept=".gb,.fasta" >
+</div>
+<div class="col-sm-2">
+<button class="btn-primary btn" type="submit">解析文件</button>
+</div>    
+</form>
+</div>
+</div>
+<!-- /#mainWrap -->
+ {% endblock %}

@@ -1,0 +1,33 @@
+{% extends "en_base.html" %} 
+{% block content %}
+ <title>Start from here</title>
+ 
+<style>
+div{table-layout:fixed;}
+div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
+textarea{overflow-y:visible;}
+h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
+</style>
+<div class="container">
+<form action="http://{{local}}/Probelist/" method="POST" role="form">{% csrf_token %}
+<div class="list-group">
+ <a href="#" class="list-group-item active">
+ <h5 class="list-group-item-heading">
+ Pre-design sequence description
+ </h5></a>
+<div class="well well-sm">
+{{description}}
+</div></div>
+<div class="list-group">
+ <a href="#" class="list-group-item active">
+ <h5 class="list-group-item-heading">
+  Pre-design sequence whole genome
+ </h5></a>
+<div class="well well-lg">
+<textarea name="seqtxt" class="form-control" style="overflow-y:hidden;height:80px;" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';">{{sequence}}</textarea>
+</div></div>
+<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon glyphicon-step-forward"></span>Start design</button>
+</form>
+</div>
+<!-- /#mainWrap -->
+{% endblock %}

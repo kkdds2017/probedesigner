@@ -1,0 +1,63 @@
+﻿﻿<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<body>
+<div class="container">
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="http://{{ local }}/">ProbeDesigner V1.0<i><sub><a href="http://{{ local }}/">中文Beta</a></sub></i></a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+          <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               probe design<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li><a href="http://{{ local }}/fromfile/">中文版</a></li>
+            <li><a href="http://{{ local }}/english/">English</a></li>
+            </ul>
+         </li>
+         <li><a href="http://{{ local }}/intro/">QuantiMAT Technique</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               X-mer algorithm <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="http://{{ local }}/probedesign/">probe design</a></li>
+               <li><a href="http://{{ local }}/entrez/">entrez</a></li>
+               <li><a href="http://{{ local }}/fromfile/">from a file bingo</a></li>
+               <li class="divider"></li>
+               <li><a href="http://{{ local }}/test/">X-mer calculate</a></li>
+               <li class="divider"></li>
+               <li><a href="#">NSH calculate</a></li>
+            </ul>
+         </li>
+          <li class="dropdown">
+            <a href="http://www.probedesigner.cn/help/default.htm" class="dropdown-toggle" data-toggle="dropdown">
+               Software Help<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="http://www.probedesigner.cn/help/default.htm">Software support docs</a></li>
+               <li><a href="http://{{ local }}/about/">About topic</a></li>
+               <li><a href="http://{{ local }}/copy/">Copyrights</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+ {% block content %}
+ <!-- 此处为模板引用位置 -->
+ {% endblock %}
+<div class="panel panel-info" id="footer" style="clear:both;">
+<p align="center">豫ICP备14029863号 <span>OligoDesigner V1.0 probedesigner software </span></p>
+<p align="center">All rights received @{{thisyear}} Zhengzhou Kodia biotechnology Co., Ltd
+<a href="http://{{ local }}/legal/" title="This website does not collect any customer privacy information and personal data, etc.">Privacy policy</a>
+</p>
+</div>
+</div>
+</body>
+</html>

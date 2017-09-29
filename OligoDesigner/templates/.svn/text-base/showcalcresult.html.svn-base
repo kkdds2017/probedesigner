@@ -1,0 +1,87 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>显示X-mer计算结果</title>
+<style>
+table{font-size:14px;font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
+li{list-style-type:none;}
+</style>
+<div class="container">
+<div style="margin-top:20px;">
+<table class="table"  style="word-break:break-all; word-wrap:break-all;"> 
+  <caption><h3><b>Service as CE/LE探针的NSH计算结果</b></h3></caption>
+  <thead>
+    <tr>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center">数据</th>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center" colspan="2">数据</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <td width="15%">与AMPLeader的LCS:</td>
+      <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4merlcs_Aleader}}</td>
+      <td width="15%">AMPLeader的levenshtein：</td>
+      <td width="35%" colspan="2">{{x4merlcslen_Aleader}}</td></tr>
+    <tr class="success">
+      <td>AMPLeader通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_Aleader_seq}}</td>
+      <td>探针序列信息：</td>
+      <td colspan="2">{{calc_seq}}</td></tr>
+      <tr class="active" >
+      <td width="15%">AMPLeader的4-mers:</td>
+      <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4mer_Aleaders}}</td>
+      <td width="15%">AMPLeader的x-mer Score：</td>
+      <td width="15%"><div class="list-group">{%for x in x4mer_Aleader%}<li class="list-group-item-text">{{x}}</li>{%endfor%}</div> </td>
+      <td width="20%"><div class="list-group">{%for y in score_x4mer_Aleader%}<li class="list-group-item-text">{{y}}</li>{%endfor%}</div> </td></tr>
+      <tr class="danger">
+      <td>AMParms通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_Aarms_seq}}</td>
+      <td>与Aarms的LCS：</td>
+      <td colspan="2">{{x4mer_Aarmss}}</td></tr>
+      <tr class="success">
+      <td width="15%">Aarms的4-mers:</td>
+      <td width="35%">{{x4mer_Aarmss}}</td>
+      <td width="15%">Aarms的x-mer Score：</td>
+      <td width="15%"><div class="list-group">{%for x in x4mer_Aarms%}<li class="list-group-item-text">{{x}}</li>{%endfor%}</div> </td>
+      <td width="20%"><div class="list-group">{%for y in score_x4mer_Aarms%}<li class="list-group-item-text">{{y}}</li>{%endfor%}</div> </td></tr>
+      <tr class="danger">
+      <td>AP Probes通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_AP_seq}}</td>
+      <td>与AP Probe的LCS：</td>
+      <td colspan="2">{{x4mer_APs}}</td></tr>
+      <tr class="info">
+      <td width="15%">APs的4-mers:</td>
+      <td width="35%">{{x4mer_APs}}</td>
+      <td width="15%">AP的x-mer Score：</td>
+      <td width="15%"><div class="list-group">{%for x in x4mer_AP%}<li class="list-group-item-text">{{x}}</li>{%endfor%}</div> </td>
+      <td width="20%"><div class="list-group">{%for y in score_x4mer_AP%}<li class="list-group-item-text">{{y}}</li>{%endfor%}</div> </td></tr>
+      <tr class="success">
+      <td>PSCP通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_PSCP_seq}}</td>
+      <td>与PSCP的LCS：</td>
+      <td colspan="2">{{x4mer_PSCPs}}</td></tr>
+      <tr class="danger">
+      <td width="15%">PSCPs的4-mers:</td>
+      <td width="35%">{{x4mer_PSCPs}}</td>
+      <td width="15%">PSCP的x-mer Score：</td>
+      <td width="15%"><div class="list-group"> {%for x in x4mer_PSCP%}<div class="list-group"><li class="list-group-item-text">{{x}}</li>{%endfor%}</div></td>
+      <td width="20%"><div class="list-group">{%for y in score_x4mer_PSCP%}<div class="list-group"><li class="list-group-item-text">{{y}}</li>{%endfor%}</div></td></tr>
+      <tr class="active">
+      <td width="20%">AMPleader(3X)：{{NSH_Score_Aleader_SACE}}</td>
+      <td width="20%">AMParms(20X)：{{NSH_Score_Aarms_SACE}}</td>
+      <td width="20%">AP Probes(20X)：{{NSH_Score_AP_SACE}}</td>
+      <td width="15%">LE&CP(0X)：{{NSH_Score_PSCP_SACE}}</td>
+      <td width="25%"><font color=red><em><b>NSH_CE:</b></em></font><b>{{Total_NSH_SACE}}</b></td></tr>
+      <tr class="warning">
+      <td width="20%">AMPleader(0X)：{{NSH_Score_Aleader_SALE}}</td>
+      <td width="20%">AMParms(0X)：{{NSH_Score_Aarms_SALE}}</td>
+      <td width="20%">AP Probes(0X)：{{NSH_Score_AP_SALE}}</td>
+      <td width="15%">CE&CP(12X)：{{NSH_Score_PSCP_SALE}}</td>
+      <td width="25%"><font color=red><em><b>NSH_LE:</b></em></font><b>{{Total_NSH_SALE}}</b></td></tr>
+  </tbody>
+</table>
+
+</div></div>
+<!-- /#mainWrap -->
+ {% endblock %}

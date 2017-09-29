@@ -1,0 +1,30 @@
+{% extends "en_base.html" %} 
+ {% block content %}
+ <title>Usable primer list</title>
+ <div class="container">
+ <form action="http://{{local}}/Universalvalue/" method="POST" role="form" class="form-horizontal" >{% csrf_token %}
+ <div class="list-group">
+    <a href="#" class="list-group-item active">
+         <span class="badge">
+            Primer number
+        </span>
+        <h4 class="list-group-item-heading">
+            Usable primer index
+        </h4>
+    </a> 
+ {% for key,value in probedict.items %}
+    <a class="list-group-item">
+    <span class="badge pull-right">
+    {{key}}
+    </span>
+      <input type="text" readonly="readonly" style="width:50%" class="form control" value="{{value.0}}" name="probedictvalue">
+      <input type="hidden" readonly="readonly" style="width:20%" class="form control" value="{{key}}" name="probedictkey">
+      <input type="hidden" readonly="readonly" style="width:20%" class="form control" value="{{value.1}}" name="probelength">
+    </a>
+{% endfor %}
+</div>
+<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>Calculate the NSH value with the universal sequence</button>
+</form>
+</div>
+ <!-- /#mainWrap -->
+{% endblock %}

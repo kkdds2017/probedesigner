@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <style>
+        .divtree TD
+        {
+            font-size: 14px;
+            font-family: arial,sans-serif;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .divtree A
+        {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <script src="js/simpleTree.js"></script>
+    <script src="js/contentTree.js"></script>
+</head>
+<body leftmargin="0" rightmargin="0" bottommargin="0" topmargin="0" style="background-color: transparent">
+    <div class="divtree" style="overflow: auto; width: 100%; position: relative; height: 100%">
+
+        <script>initializeDocument()</script>
+
+    </div>
+</body>
+</html>

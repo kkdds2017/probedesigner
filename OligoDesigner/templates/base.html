@@ -1,0 +1,64 @@
+﻿﻿<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<body>
+<div class="container">
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="http://{{ local }}/">ProbeDesigner V1.0<i><sup><a href="http://{{ local }}/eindex">English beta</a></sup></i></a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+          <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               探针设计<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li><a href="http://{{ local }}/fromfile/">中文版</a></li>
+               <li><a href="http://{{ local }}/english/">English</a></li>
+            </ul>
+         </li>
+         <li><a href="http://{{ local }}/intro/">QuantiMAT技术介绍</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               X-mer算法 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="http://{{ local }}/probedesign/">探针设计</a></li>
+               <li><a href="http://{{ local }}/entrez/">entrez</a></li>
+               <li><a href="http://{{ local }}/fromfile/">从file开始设计</a></li>
+               <li class="divider"></li>
+               <li><a href="http://{{ local }}/test/">X-mer计算</a></li>
+               <li class="divider"></li>
+               <li><a href="http://{{ local }}/bigdata/">大数据关键字分析</a></li>
+               <li><a href="http://{{ local }}/tfdeal/">NGS之TF处理</a></li>
+            </ul>
+         </li>
+          <li class="dropdown">
+            <a href="http://www.probedesigner.cn/help/default.htm" class="dropdown-toggle" data-toggle="dropdown">
+               软件帮助<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="http://www.probedesigner.cn/help/default.htm">软件帮助文档</a></li>
+               <li><a href="http://{{ local }}/about/">关于主题</a></li>
+               <li><a href="http://{{ local }}/copy/">版权信息</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+ {% block content %}
+ <!-- 此处为模板引用位置 -->
+ {% endblock %}
+<div class="panel panel-info" id="footer" style="clear:both;">
+<p align="center">豫ICP备14029863号 <span>OligoDesigner V1.0 探针设计软件 </span></p>
+<p align="center">版权所有，侵权必究@{{thisyear}} 郑州科蒂亚生物科技有限公司
+<a href="http://{{ local }}/legal/" title="本网站不收集任何客户隐私信息以及个人资料等">隐私政策</a>
+</p>
+</div>
+</div>
+</body>
+</html>

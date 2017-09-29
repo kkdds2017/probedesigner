@@ -1,0 +1,59 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>QuantiMAT技术原理简介</title>
+ <div class="container">
+ <div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>QuantiMAT 2.0</em>工作原理动态示意图</b>
+    </div>
+    <div class="panel-body">
+        <p><img src="http://kkds1314-img1.stor.sinaapp.com/bDNA-work-Flow.gif" /></p>
+    </div>
+  </div>
+  
+ <div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>QuantiMAT</em>工作原理示意图</b>
+    </div>
+    <div class="panel-body">
+    <h3>QuantiMAT技术详解及技术示意图：对应产品 QuantiMAT TM single Platform。</h3>
+        <p><img width="600" src="http://kkds1314-img1.stor.sinaapp.com/QM.png" /></p>
+    <ul>技术特点介绍：
+    <li>首先裂解样本，释放出目标RNA；</li>
+    <li>然后加入探针组，捕获延伸探针的一部分与孔板底部的通用探针结合， 另一部分与目标RNA结合。“K ”型标记延伸探针与目标RNA 结合。 还有一个封闭探针用来封闭一些位点提高特异性。</li>
+    <li>探针组杂交后，逐步加入信号放大前体、放大体、碱性磷酸酶标记的探针和底物。一组 “K”可将信号放大400倍，一般一个目标 RNA 会结合20组 “K”，所以一个RNA 目标会被放大8000倍。最后用化学发光分析仪检测。</li>
+    <li>定量检测可以得到实际的倍数差异,而不是CT的变化结果更直接准确。</li>
+    <li>灵敏度比TaqMan高100~1000倍。</li>
+    </ul>
+    </div>
+  </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>QuantiMAT TM</em> Magnetic Beads工作原理示意图</b>
+    </div>
+    <div class="panel-body">
+    <h3>基于磁珠平台的QuantiMAT TM Magnetic Beads灵敏度更高，对于某些特定基因达到50 copies/基因</h3>
+        <p><img width="600" src="http://kkds1314-img1.stor.sinaapp.com/QMMB5.png" /></p>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>QuantiMeter1000</em>配套仪器介绍</b>
+    </div>
+    <div class="panel-body">
+    <h3>QuantiMeter1000样机参数</h3>
+     <p><img src="http://kkds1314-img1.stor.sinaapp.com/QM1000character.png" /></p>
+    <h3>QuantiMeter1000实体样机</h3>
+        <p><img src="http://kkds1314-img1.stor.sinaapp.com/QM1000.png" /></p>
+    </div>
+    <ul>仪器适用场合：
+    <li>Elisa酶免反应；</li>
+    <li>化学发光；</li>
+    <li>免疫分析；</li>
+    <li>替代PCR做RNA表达分析</li>
+    <li>病原体核酸检测试剂盒开发</li>
+    </ul>    
+</div>
+</div>
+<!-- /#mainWrap -->
+{% endblock %}

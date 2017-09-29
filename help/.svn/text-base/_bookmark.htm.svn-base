@@ -1,0 +1,91 @@
+﻿<html>
+<head>
+    <title>Index - demo/test</title>
+    <link href="pgstyles.css" type="text/css" rel="StyleSheet" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script>
+        function $$(id)
+        { return document.getElementById(id); }
+        function addBookMark() {
+            var url = top.frames["basefrm"].location.href;
+            url = url.substr(url.lastIndexOf("/")+1);
+            if (null != url) {
+                for (var idx = 0; idx < $$('slBookMark').options.length; idx++) {
+                    if ($$('slBookMark').options[idx].value == url)
+                        return;
+                }
+                $$('slBookMark').options.add(new Option(top.frames["basefrm"].document.title, url));
+                setCookie(top.document.title, $$('divBookMark').innerHTML, 360);
+            }
+        }
+        function delBookMark() {
+            var idx = $$('slBookMark').selectedIndex;
+            if (idx > -1) {
+                var item = $$('slBookMark')[idx];
+                $$('slBookMark').remove(idx);
+                setCookie(top.document.title, $$('divBookMark').innerHTML, 360);
+            }
+        }
+        function frmOnload() {
+            if (null == $$("divBookMark").loaded) {
+                var ops = getCookie(top.document.title);
+                if (ops!='undefined'&&null != ops && "" != ops)
+                    $$("divBookMark").innerHTML = ops;
+                $$("divBookMark").loaded = true;
+            }
+            winResized();
+        }
+        function showMarkHref() {
+            if ($$('slBookMark').selectedIndex < 0) return;
+            var item = $$('slBookMark')[$$('slBookMark').selectedIndex];
+            window.open(item.value, "basefrm");
+        }
+        function winResized() {     
+            var body=$$('slBookMark').parentNode;
+            $$('slBookMark').style.height = body.offsetHeight -23;               
+        }
+
+        function setCookie(name, value) {
+            var argv = setCookie.arguments;
+            var argc = setCookie.arguments.length;
+            var expires = (argc > 2) ? argv[2] : null;
+            if (expires != null) {
+                var LargeExpDate = new Date();
+                LargeExpDate.setTime(LargeExpDate.getTime() + (expires * 1000 * 3600 * 24));
+            }
+            document.cookie = name + "=" + escape(value) + ((expires == null) ? "" : ("; expires=" + LargeExpDate.toGMTString()));
+        }
+        function getCookie(Name) {
+            var search = Name + "="
+            if (document.cookie.length > 0) {
+                offset = document.cookie.indexOf(search)
+                if (offset != -1) {
+                    offset += search.length
+                    end = document.cookie.indexOf(";", offset)
+                    if (end == -1) end = document.cookie.length
+                    return unescape(document.cookie.substring(offset, end))
+                }
+                else return ""
+            }
+        }
+        function deleteCookie(name) {
+            var expdate = new Date();
+            expdate.setTime(expdate.getTime() - (86400 * 1000 * 1));
+            setCookie(name, "", expdate);
+        } 
+      
+        </script>
+</head>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" onresize="winResized();" onload="frmOnload();" style="overflow:hidden">
+  <div id="divBookMark">  
+    <select id="slBookMark" onclick="showMarkHref()" size="4" border="0" cellspacing="0"
+        cellpadding="0" style="width: 100%; height: 100%" class="keywordindex">
+       
+    </select>
+  </div>
+  <span style="text-align:right;width:95%">
+                <input id="btnAddMark" type=button value="添加" onclick="addBookMark()" /> 
+                <input id="btnDelMark" type=button value="删除" onclick="delBookMark()" /> 
+                 </span>
+</body>
+</html>
